@@ -15,7 +15,9 @@ const CONFIG = {
 ================================================== */
 
 const loadingScreen = document.getElementById("loadingScreen");
-const invitationContent = document.getElementById("invitationContent");
+const invitationContent = document.getElementById(
+  "invitationContent"
+);
 const accessError = document.getElementById("accessError");
 
 const principalName = document.getElementById("principalName");
@@ -31,9 +33,13 @@ const bgMusic = document.getElementById("bgMusic");
 ================================================== */
 
 function obtenerIdentificador() {
-  const parametros = new URLSearchParams(window.location.search);
+  const parametros = new URLSearchParams(
+    window.location.search
+  );
 
-  const identificador = parametros.get(CONFIG.parametroInvitado);
+  const identificador = parametros.get(
+    CONFIG.parametroInvitado
+  );
 
   if (!identificador) {
     return "";
@@ -43,7 +49,7 @@ function obtenerIdentificador() {
 }
 
 /* ==================================================
-   DETECTAR SI ESTAMOS TRABAJANDO LOCALMENTE
+   DETECTAR ENTORNO LOCAL
 ================================================== */
 
 function esEntornoLocal() {
@@ -51,6 +57,18 @@ function esEntornoLocal() {
     window.location.hostname === "127.0.0.1" ||
     window.location.hostname === "localhost"
   );
+}
+
+/* ==================================================
+   OCULTAR PANTALLA DE CARGA
+================================================== */
+
+function ocultarPantallaCarga() {
+  window.setTimeout(() => {
+    if (loadingScreen) {
+      loadingScreen.hidden = true;
+    }
+  }, CONFIG.tiempoPantallaCarga);
 }
 
 /* ==================================================
@@ -64,6 +82,10 @@ function mostrarInvitacion() {
 
   if (invitationContent) {
     invitationContent.hidden = false;
+  }
+
+  if (musicButton) {
+    musicButton.hidden = false;
   }
 
   ocultarPantallaCarga();
@@ -82,23 +104,38 @@ function mostrarError() {
     accessError.hidden = false;
   }
 
-  ocultarPantallaCarga();
-
   if (musicButton) {
     musicButton.hidden = true;
   }
+
+  ocultarPantallaCarga();
 }
 
 /* ==================================================
-   OCULTAR PANTALLA DE CARGA
+   CONFIGURAR TIPO DE INVITACIÓN
 ================================================== */
 
-function ocultarPantallaCarga() {
-  window.setTimeout(() => {
-    if (loadingScreen) {
-      loadingScreen.hidden = true;
-    }
-  }, CONFIG.tiempoPantallaCarga);
+function configurarTipoInvitacion(tipo) {
+  if (!invitationContent) {
+    return;
+  }
+
+  const tipoNormalizado = String(
+    tipo || "alojamiento"
+  )
+    .trim()
+    .toLowerCase();
+
+  const esPasadia =
+    tipoNormalizado === "pasadia" ||
+    tipoNormalizado === "pasa dia" ||
+    tipoNormalizado === "pasa-día" ||
+    tipoNormalizado === "pasadía";
+
+  invitationContent.classList.toggle(
+    "is-pasadia",
+    esPasadia
+  );
 }
 
 /* ==================================================
@@ -131,6 +168,8 @@ function actualizarInvitado(invitado) {
       cupos === 1 ? "cupo" : "cupos";
   }
 
+  configurarTipoInvitacion(invitado.tipo);
+
   mostrarInvitacion();
 }
 
@@ -144,11 +183,13 @@ function buscarInvitado(invitados, identificador) {
   }
 
   return invitados.find((invitado) => {
-    const telefono = String(
-      invitado.telefono || invitado.id || ""
+    const id = String(
+      invitado.id ||
+      invitado.telefono ||
+      ""
     ).trim();
 
-    return telefono === identificador;
+    return id === identificador;
   });
 }
 
@@ -160,17 +201,17 @@ async function cargarInvitados() {
   const identificador = obtenerIdentificador();
 
   /*
-   * Durante la prueba local, si no se escribe un identificador,
-   * se muestra la invitación con los datos temporales del HTML.
+   * En local, sin ID, permite visualizar el diseño
+   * con la información temporal del HTML.
    */
   if (!identificador && esEntornoLocal()) {
+    configurarTipoInvitacion("alojamiento");
     mostrarInvitacion();
     return;
   }
 
   /*
-   * En la página publicada, un enlace sin identificador
-   * se considera inválido.
+   * En la página publicada se requiere un ID válido.
    */
   if (!identificador) {
     mostrarError();
@@ -210,11 +251,8 @@ async function cargarInvitados() {
       error
     );
 
-    /*
-     * En el entorno local permite continuar viendo el diseño,
-     * aunque invitados.json todavía esté vacío o incompleto.
-     */
     if (esEntornoLocal()) {
+      configurarTipoInvitacion("alojamiento");
       mostrarInvitacion();
       return;
     }
@@ -291,10 +329,6 @@ function configurarMusica() {
     return;
   }
 
-  /*
-   * Volumen inicial moderado para no sorprender
-   * a la persona que abre la invitación.
-   */
   bgMusic.volume = 0.55;
 
   musicButton.addEventListener(

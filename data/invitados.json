@@ -2,91 +2,205 @@
   {
     "id": "mj-001",
     "principal": "Laura Tobar",
-    "cupos": 3
+    "cupos": 3,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-002",
     "principal": "Salomé Rosero",
-    "cupos": 1
+    "cupos": 1,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-003",
     "principal": "Maria José Caicedo",
-    "cupos": 2
+    "cupos": 2,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-004",
     "principal": "Nicol Ardila",
-    "cupos": 2
+    "cupos": 2,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-005",
     "principal": "Gabriela Rivera",
-    "cupos": 2
+    "cupos": 2,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-006",
     "principal": "Taliana Gonzales",
-    "cupos": 2
+    "cupos": 2,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-007",
     "principal": "Juan Pablo Lombana",
-    "cupos": 1
+    "cupos": 1,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-008",
     "principal": "Manuel Alejandro Gerrero",
-    "cupos": 2
+    "cupos": 2,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-009",
     "principal": "Samuel David",
-    "cupos": 1
+    "cupos": 1,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-010",
     "principal": "Gerónimo Toro",
-    "cupos": 1
+    "cupos": 1,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-011",
     "principal": "Matias Murillo",
-    "cupos": 2
+    "cupos": 2,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-012",
     "principal": "Simón Escobar",
-    "cupos": 1
+    "cupos": 1,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-013",
     "principal": "Moises Lopez",
-    "cupos": 3
+    "cupos": 3,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-014",
     "principal": "Samual Sandoval",
-    "cupos": 1
+    "cupos": 1,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-015",
     "principal": "Jacobo Gómez",
-    "cupos": 2
+    "cupos": 2,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-016",
     "principal": "Juan Manuel Pérez",
-    "cupos": 3
+    "cupos": 3,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-017",
     "principal": "Isabella Beltrán",
-    "cupos": 1
+    "cupos": 1,
+    "tipo": "alojamiento"
   },
   {
     "id": "mj-018",
     "principal": "Ana Ramírez",
-    "cupos": 1
+    "cupos": 1,
+    "tipo": "alojamiento"
+  },
+  {
+    "id": "mj-019",
+    "principal": "Manuela Fonseca",
+    "cupos": 3,
+    "tipo": "alojamiento"
+  },
+  {
+    "id": "mj-020",
+    "principal": "Lina Criales",
+    "cupos": 1,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-021",
+    "principal": "Melissa Criales",
+    "cupos": 1,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-022",
+    "principal": "Alejandro Criales",
+    "cupos": 1,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-023",
+    "principal": "Tía Mariela y Manuel Criales",
+    "cupos": 2,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-024",
+    "principal": "Tía esperanza y Luis Migue",
+    "cupos": 2,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-025",
+    "principal": "Tia Aliria Ceballos",
+    "cupos": 1,
+    "tipo": "alojamiento"
+  },
+  {
+    "id": "mj-026",
+    "principal": "Tío Mario Llanos",
+    "cupos": 1,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-027",
+    "principal": "Tío Edinson Llanos",
+    "cupos": 1,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-028",
+    "principal": "Diana Marcela Llanos",
+    "cupos": 1,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-029",
+    "principal": "Marin Garcia Orozco",
+    "cupos": 2,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-030",
+    "principal": "Clarivel, isabella, y Luis fer",
+    "cupos": 4,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-031",
+    "principal": "Tio Fernando Hurtado",
+    "cupos": 1,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-032",
+    "principal": "Leandro y Diana",
+    "cupos": 2,
+    "tipo": "alojamiento"
+  },
+  {
+    "id": "mj-033",
+    "principal": "Julián Rivera",
+    "cupos": 1,
+    "tipo": "pasadia"
+  },
+  {
+    "id": "mj-034",
+    "principal": "Katherin, Mariana Y Antonella",
+    "cupos": 3,
+    "tipo": "pasadia"
   }
 ]

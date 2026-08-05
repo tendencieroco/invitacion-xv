@@ -1225,3 +1225,20 @@ button {
     animation: none;
   }
 }
+
+/* ==================================================
+   INVITACIONES DE PASADÍA
+================================================== */
+
+.invitation.is-pasadia #experiencePool,
+.invitation.is-pasadia #experienceAccommodation,
+.invitation.is-pasadia #daySchedule {
+  display: none;
+}
+
+.invitation.is-pasadia .experience__grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 390px;
+  margin-right: auto;
+  margin-left: auto;
+}
