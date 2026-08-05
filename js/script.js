@@ -15,9 +15,11 @@ const CONFIG = {
 ================================================== */
 
 const loadingScreen = document.getElementById("loadingScreen");
+
 const invitationContent = document.getElementById(
   "invitationContent"
 );
+
 const accessError = document.getElementById("accessError");
 
 const principalName = document.getElementById("principalName");
@@ -27,6 +29,49 @@ const capacityLabel = document.getElementById("capacityLabel");
 const musicButton = document.getElementById("musicButton");
 const musicIcon = document.getElementById("musicIcon");
 const bgMusic = document.getElementById("bgMusic");
+
+const locationButton = document.getElementById("locationButton");
+const organizerButton = document.getElementById("organizerButton");
+
+/*
+ * Guarda temporalmente al invitado cargado.
+ * Se utiliza para asociar los clics con el ID correcto.
+ */
+let invitadoActual = null;
+
+/* ==================================================
+   GOOGLE TAG MANAGER / DATA LAYER
+================================================== */
+
+window.dataLayer = window.dataLayer || [];
+
+/**
+ * Envía un evento a Google Tag Manager.
+ *
+ * No se envía el nombre del invitado para evitar transmitir
+ * información personal a Google Analytics.
+ */
+function enviarEventoAnalitica(nombreEvento, parametros = {}) {
+  window.dataLayer.push({
+    event: nombreEvento,
+    ...parametros,
+  });
+}
+
+/**
+ * Devuelve los parámetros anónimos del invitado actual.
+ */
+function obtenerParametrosInvitado() {
+  if (!invitadoActual) {
+    return {};
+  }
+
+  return {
+    guest_id: invitadoActual.id,
+    guest_type: invitadoActual.tipo,
+    guest_slots: Number(invitadoActual.cupos) || 1,
+  };
+}
 
 /* ==================================================
    OBTENER IDENTIFICADOR DESDE LA URL
@@ -108,6 +153,10 @@ function mostrarError() {
     musicButton.hidden = true;
   }
 
+  enviarEventoAnalitica("invitation_not_found", {
+    requested_guest_id: obtenerIdentificador(),
+  });
+
   ocultarPantallaCarga();
 }
 
@@ -148,6 +197,8 @@ function actualizarInvitado(invitado) {
     return;
   }
 
+  invitadoActual = invitado;
+
   const nombre =
     invitado.principal ||
     invitado.nombre ||
@@ -171,6 +222,15 @@ function actualizarInvitado(invitado) {
   configurarTipoInvitacion(invitado.tipo);
 
   mostrarInvitacion();
+
+  /*
+   * Se registra únicamente cuando la invitación válida
+   * ya fue cargada correctamente.
+   */
+  enviarEventoAnalitica(
+    "view_invitation",
+    obtenerParametrosInvitado()
+  );
 }
 
 /* ==================================================
@@ -201,8 +261,7 @@ async function cargarInvitados() {
   const identificador = obtenerIdentificador();
 
   /*
-   * En local, sin ID, permite visualizar el diseño
-   * con la información temporal del HTML.
+   * En local y sin ID, permite revisar el diseño.
    */
   if (!identificador && esEntornoLocal()) {
     configurarTipoInvitacion("alojamiento");
@@ -211,7 +270,7 @@ async function cargarInvitados() {
   }
 
   /*
-   * En la página publicada se requiere un ID válido.
+   * En la versión publicada se requiere un ID válido.
    */
   if (!identificador) {
     mostrarError();
@@ -258,6 +317,30 @@ async function cargarInvitados() {
     }
 
     mostrarError();
+  }
+}
+
+/* ==================================================
+   EVENTOS DE WAZE Y WHATSAPP
+================================================== */
+
+function configurarEventosBotones() {
+  if (locationButton) {
+    locationButton.addEventListener("click", () => {
+      enviarEventoAnalitica(
+        "click_waze",
+        obtenerParametrosInvitado()
+      );
+    });
+  }
+
+  if (organizerButton) {
+    organizerButton.addEventListener("click", () => {
+      enviarEventoAnalitica(
+        "click_whatsapp",
+        obtenerParametrosInvitado()
+      );
+    });
   }
 }
 
@@ -309,10 +392,26 @@ async function alternarMusica() {
   try {
     if (bgMusic.paused) {
       await bgMusic.play();
+
       actualizarBotonMusica(true);
+
+      /*
+       * Solo se registra cuando la canción comienza
+       * realmente a reproducirse.
+       */
+      enviarEventoAnalitica(
+        "music_play",
+        obtenerParametrosInvitado()
+      );
     } else {
       bgMusic.pause();
+
       actualizarBotonMusica(false);
+
+      enviarEventoAnalitica(
+        "music_pause",
+        obtenerParametrosInvitado()
+      );
     }
   } catch (error) {
     console.error(
@@ -354,6 +453,44 @@ function configurarMusica() {
 }
 
 /* ==================================================
+   SCROLL HASTA EL FINAL
+================================================== */
+
+function configurarScrollFinal() {
+  let finalRegistrado = false;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (finalRegistrado || !invitadoActual) {
+        return;
+      }
+
+      const posicionActual =
+        window.scrollY + window.innerHeight;
+
+      const alturaDocumento =
+        document.documentElement.scrollHeight;
+
+      const llegoAlFinal =
+        posicionActual >= alturaDocumento - 80;
+
+      if (llegoAlFinal) {
+        finalRegistrado = true;
+
+        enviarEventoAnalitica(
+          "invitation_complete",
+          obtenerParametrosInvitado()
+        );
+      }
+    },
+    {
+      passive: true,
+    }
+  );
+}
+
+/* ==================================================
    INICIAR INVITACIÓN
 ================================================== */
 
@@ -361,6 +498,8 @@ window.addEventListener(
   "DOMContentLoaded",
   () => {
     configurarMusica();
+    configurarEventosBotones();
+    configurarScrollFinal();
     cargarInvitados();
   }
 );
