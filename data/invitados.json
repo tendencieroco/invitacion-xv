@@ -1,0 +1,92 @@
+[
+  {
+    "id": "mj-001",
+    "principal": "Laura Tobar",
+    "cupos": 3
+  },
+  {
+    "id": "mj-002",
+    "principal": "Salomé Rosero",
+    "cupos": 1
+  },
+  {
+    "id": "mj-003",
+    "principal": "Maria José Caicedo",
+    "cupos": 2
+  },
+  {
+    "id": "mj-004",
+    "principal": "Nicol Ardila",
+    "cupos": 2
+  },
+  {
+    "id": "mj-005",
+    "principal": "Gabriela Rivera",
+    "cupos": 2
+  },
+  {
+    "id": "mj-006",
+    "principal": "Taliana Gonzales",
+    "cupos": 2
+  },
+  {
+    "id": "mj-007",
+    "principal": "Juan Pablo Lombana",
+    "cupos": 1
+  },
+  {
+    "id": "mj-008",
+    "principal": "Manuel Alejandro Gerrero",
+    "cupos": 2
+  },
+  {
+    "id": "mj-009",
+    "principal": "Samuel David",
+    "cupos": 1
+  },
+  {
+    "id": "mj-010",
+    "principal": "Gerónimo Toro",
+    "cupos": 1
+  },
+  {
+    "id": "mj-011",
+    "principal": "Matias Murillo",
+    "cupos": 2
+  },
+  {
+    "id": "mj-012",
+    "principal": "Simón Escobar",
+    "cupos": 1
+  },
+  {
+    "id": "mj-013",
+    "principal": "Moises Lopez",
+    "cupos": 3
+  },
+  {
+    "id": "mj-014",
+    "principal": "Samual Sandoval",
+    "cupos": 1
+  },
+  {
+    "id": "mj-015",
+    "principal": "Jacobo Gómez",
+    "cupos": 2
+  },
+  {
+    "id": "mj-016",
+    "principal": "Juan Manuel Pérez",
+    "cupos": 3
+  },
+  {
+    "id": "mj-017",
+    "principal": "Isabella Beltrán",
+    "cupos": 1
+  },
+  {
+    "id": "mj-018",
+    "principal": "Ana Ramírez",
+    "cupos": 1
+  }
+]

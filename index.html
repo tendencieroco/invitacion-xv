@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta
+      name="robots"
+      content="noindex, nofollow, noarchive"
+    />
+
+    <meta
+      name="description"
+      content="Invitación privada a los XV años de María José Hurtado Orozco."
+    />
+
+    <meta name="theme-color" content="#f8f0e3" />
+
+    <title>Mis XV de María José | Invitación privada</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Pantalla de carga -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-screen__content">
+        <span class="loading-screen__script">Mis XV</span>
+
+        <span class="loading-screen__dot"></span>
+
+        <p>Abriendo tu invitación</p>
+      </div>
+    </div>
+
+    <!-- Mensaje para enlaces no válidos -->
+    <section class="access-error" id="accessError" hidden>
+      <div class="access-error__card">
+        <span class="material-symbols-rounded">
+          mark_email_unread
+        </span>
+
+        <h1>Invitación no encontrada</h1>
+
+        <p>
+          Revisa que el enlace recibido por WhatsApp esté completo
+          o comunícate directamente con la organizadora.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main
+      class="invitation"
+      id="invitationContent"
+      hidden
+    >
+      <!-- Portada -->
+      <header class="hero">
+        <img
+          class="hero__image"
+          src="assets/images/piscina.jpg"
+          alt="Piscina y zona social de la finca"
+        />
+
+        <div class="hero__overlay"></div>
+
+        <div class="hero__content">
+          <p class="hero__script">Mis XV</p>
+
+          <p class="hero__name">
+            María José Hurtado Orozco
+          </p>
+
+          <p class="hero__invitation">
+            Te invito a celebrar conmigo mis XV
+          </p>
+
+          <h1>
+            Un fin de semana
+            <span>para celebrar</span>
+          </h1>
+
+          <p class="hero__accent">diferente</p>
+
+          <p class="hero__description">
+            Te invito a vivir una celebración inolvidable en la
+            finca, donde compartiremos en familia, disfrutaremos de
+            la naturaleza y celebraremos juntos este momento tan
+            especial.
+          </p>
+
+          <!-- Fecha y hora -->
+          <div class="hero__event">
+            <div class="hero__event-item">
+              <span class="material-symbols-rounded">
+                calendar_month
+              </span>
+
+              <div>
+                <span class="hero__event-label">
+                  Fecha
+                </span>
+
+                <strong>
+                  Sábado 5 de septiembre de 2026
+                </strong>
+              </div>
+            </div>
+
+            <div class="hero__event-divider"></div>
+
+            <div class="hero__event-item">
+              <span class="material-symbols-rounded">
+                schedule
+              </span>
+
+              <div>
+                <span class="hero__event-label">
+                  Hora
+                </span>
+
+                <strong>4:00 p. m.</strong>
+              </div>
+            </div>
+
+            <p class="hero__punctual">
+              Te espero puntual
+            </p>
+          </div>
+        </div>
+
+        <a
+          class="hero__scroll"
+          href="#invitados"
+          aria-label="Descubrir invitación"
+        >
+          <span>Descubre tu invitación</span>
+
+          <span class="material-symbols-rounded">
+            keyboard_arrow_down
+          </span>
+        </a>
+      </header>
+
+      <!-- Invitado y cupos -->
+      <section
+        class="guest-section section"
+        id="invitados"
+      >
+        <div class="guest-card">
+          <p class="eyebrow">
+            Esta invitación está reservada para
+          </p>
+
+          <h2
+            class="guest-card__principal"
+            id="principalName"
+          >
+            Nombre del invitado
+          </h2>
+
+          <div class="guest-card__companion">
+            <p class="guest-card__label">
+              Esta invitación incluye
+            </p>
+
+            <p class="guest-card__companion-name">
+              <span id="guestCapacity">2</span>
+
+              <span id="capacityLabel">cupos</span>
+            </p>
+          </div>
+
+          <div class="guest-card__information">
+            <div class="guest-card__information-item">
+              <span class="material-symbols-rounded">
+                favorite
+              </span>
+
+              <p>
+                Invitación personal
+                <br />
+                e intransferible
+              </p>
+            </div>
+
+            <div class="guest-card__divider"></div>
+
+            <div class="guest-card__information-item">
+              <span class="material-symbols-rounded">
+                group
+              </span>
+
+              <p>
+                Evento con
+                <br />
+                aforo limitado
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lo que te espera -->
+      <section class="experience section">
+        <div class="section-heading">
+          <span></span>
+
+          <h2>Lo que te espera</h2>
+
+          <span></span>
+        </div>
+
+        <div class="experience__grid">
+          <article class="experience-card">
+            <span class="material-symbols-rounded">
+              cottage
+            </span>
+
+            <h3>Celebración en finca</h3>
+          </article>
+
+          <article class="experience-card">
+            <span class="material-symbols-rounded">
+              pool
+            </span>
+
+            <h3>Piscina y naturaleza</h3>
+          </article>
+
+          <article class="experience-card">
+            <span class="material-symbols-rounded">
+              celebration
+            </span>
+
+            <h3>Fiesta el primer día</h3>
+          </article>
+
+          <article class="experience-card">
+            <span class="material-symbols-rounded">
+              bed
+            </span>
+
+            <h3>Alojamiento para invitados</h3>
+          </article>
+        </div>
+      </section>
+
+      <!-- Fotografía del salón -->
+      <section class="place section">
+        <figure class="place-card">
+          <img
+            src="assets/images/salon.jpg"
+            alt="Zona social interior de la finca"
+            loading="lazy"
+          />
+
+          <figcaption class="place-card__caption">
+            <p class="eyebrow">
+              Un lugar para compartir
+            </p>
+
+            <h2>
+              Espacios para crear recuerdos inolvidables
+            </h2>
+
+            <p>
+              Un ambiente rodeado de naturaleza, preparado para
+              disfrutar, descansar y celebrar juntos.
+            </p>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Código de vestimenta -->
+      <section
+        class="dress-code section"
+        id="vestimenta"
+      >
+        <div class="section-heading">
+          <span></span>
+
+          <h2>
+            Código de vestimenta: Tropical Casual
+          </h2>
+
+          <span></span>
+        </div>
+
+        <p class="dress-code__intro">
+          La idea es venir elegantes, pero muy cómodos para
+          disfrutar de la finca. No es un evento de gala, así que
+          no se necesita vestido largo ni traje formal.
+
+          <span class="dress-code__schedule">
+            <strong>Día 1:</strong>
+            celebración con código de vestimenta Tropical Casual.
+
+            <br />
+
+            <strong>Día 2:</strong>
+            piscina y descanso. Recuerda llevar tu vestido de baño
+            y una muda adicional.
+          </span>
+        </p>
+
+        <div class="dress-code__grid">
+          <article class="dress-card">
+            <span class="material-symbols-rounded">
+              styler
+            </span>
+
+            <div>
+              <h3>Mujeres</h3>
+
+              <p>
+                Vestidos cortos o maxis, conjuntos de falda o
+                pantalón, o shorts de dril elegantes.
+              </p>
+            </div>
+          </article>
+
+          <article class="dress-card">
+            <span class="material-symbols-rounded">
+              checkroom
+            </span>
+
+            <div>
+              <h3>Hombres</h3>
+
+              <p>
+                Guayabera o camisa de lino en tonos claros con
+                pantalón de dril o jean.
+              </p>
+            </div>
+          </article>
+
+          <article class="dress-card">
+            <span class="material-symbols-rounded">
+              steps
+            </span>
+
+            <div>
+              <h3>Calzado</h3>
+
+              <p>
+                Tenis casuales o sandalias cómodas. La quinceañera
+                también irá en tenis.
+              </p>
+            </div>
+          </article>
+
+          <article class="dress-card">
+            <span class="material-symbols-rounded">
+              block
+            </span>
+
+            <div>
+              <h3>Evitar</h3>
+
+              <p>
+                Ropa deportiva, camisetas con estampados, chanclas
+                y colores oscuros en los hombres.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Lluvia de sobres -->
+      <section class="gift section">
+        <div class="gift-card">
+          <span
+            class="material-symbols-rounded gift-card__icon"
+          >
+            mail
+          </span>
+
+          <h2>Lluvia de sobres</h2>
+
+          <p>
+            Tu presencia es nuestro regalo más importante. Si
+            deseas tener un detalle especial, agradecemos tu cariño
+            mediante una lluvia de sobres.
+          </p>
+
+          <span
+            class="material-symbols-rounded gift-card__heart"
+          >
+            favorite
+          </span>
+        </div>
+      </section>
+
+      <!-- Ubicación -->
+      <section
+        class="location section"
+        id="ubicacion"
+      >
+        <div class="location-card">
+          <div class="location-card__heading">
+            <span class="material-symbols-rounded">
+              location_on
+            </span>
+
+            <div>
+              <p class="eyebrow">Ubicación</p>
+
+              <h2>Encuentra la finca</h2>
+
+              <p>
+                Escanea el código QR o toca el botón para abrir la
+                ruta en Waze.
+              </p>
+            </div>
+          </div>
+
+          <div class="location-card__actions">
+            <img
+              class="location-card__qr"
+              src="assets/images/qr-ubicacion.png"
+              alt="Código QR para abrir la ubicación de la finca en Waze"
+              id="locationQr"
+              loading="lazy"
+            />
+
+            <a
+              class="button button--primary"
+              id="locationButton"
+              href="https://marketho.s.gy/finca-lina-maria"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir la ubicación de la finca en Waze"
+            >
+              <span class="material-symbols-rounded">
+                location_on
+              </span>
+
+              Abrir en Waze
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fotografía aérea -->
+      <section class="farewell">
+        <img
+          src="assets/images/vista-aerea.jpg"
+          alt="Vista aérea de la finca y sus alrededores"
+          loading="lazy"
+        />
+
+        <div class="farewell__overlay"></div>
+
+        <div class="farewell__content">
+          <p class="farewell__script">
+            Nos vemos muy pronto
+          </p>
+
+          <p>
+            Prepárate para vivir un fin de semana inolvidable.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section class="contact section">
+        <div class="contact-card">
+          <div class="contact-card__icon">
+            <span class="material-symbols-rounded">
+              chat
+            </span>
+          </div>
+
+          <div class="contact-card__content">
+            <p class="eyebrow">
+              ¿Tienes alguna duda?
+            </p>
+
+            <h2>Hablar con la organizadora</h2>
+
+            <p>
+              Puedes comunicarte directamente con la mamá de la
+              quinceañera para consultar cualquier detalle del
+              evento.
+            </p>
+          </div>
+
+          <a
+            class="button button--whatsapp"
+            id="organizerButton"
+            href="https://api.whatsapp.com/send/?phone=573024045470&amp;text=Hola%2C+Moni.+Necesito+ayuda%2C+soy%3A+"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Hablar con la organizadora por WhatsApp"
+          >
+            <span class="material-symbols-rounded">
+              send
+            </span>
+
+            Hablar con la organizadora
+          </a>
+        </div>
+      </section>
+
+      <!-- Pie de página -->
+      <footer class="footer">
+        <p class="footer__script">Mis XV</p>
+
+        <p class="footer__name">
+          María José Hurtado Orozco
+        </p>
+
+        <p>
+          Sábado 5 de septiembre de 2026 · 4:00 p. m.
+        </p>
+
+        <p>
+          Una celebración preparada con mucho cariño.
+        </p>
+
+        <div class="credits">
+          Experiencia digital por
+          <strong>Alejandro Hurtado</strong>
+          · MarketHO
+        </div>
+      </footer>
+    </main>
+
+    <!-- Botón flotante de música -->
+    <button
+      class="music-button"
+      id="musicButton"
+      type="button"
+      aria-label="Reproducir música"
+      aria-pressed="false"
+    >
+      <span
+        class="material-symbols-rounded"
+        id="musicIcon"
+      >
+        music_note
+      </span>
+    </button>
+
+    <!-- Música de fondo -->
+    <audio
+      id="bgMusic"
+      loop
+      preload="auto"
+    >
+      <source
+        src="assets/audio/agua.mp3"
+        type="audio/mpeg"
+      />
+
+      Tu navegador no permite reproducir este archivo de audio.
+    </audio>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
