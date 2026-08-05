@@ -43,7 +43,7 @@
   },
   {
     "id": "mj-008",
-    "principal": "Manuel Alejandro Guerrero",
+    "principal": "Manuel Alejandro Gerrero",
     "cupos": 2,
     "tipo": "alojamiento"
   },
@@ -79,7 +79,7 @@
   },
   {
     "id": "mj-014",
-    "principal": "Samual Sandoval",
+    "principal": "Samuel Sandoval",
     "cupos": 1,
     "tipo": "alojamiento"
   },
@@ -115,7 +115,7 @@
   },
   {
     "id": "mj-020",
-    "principal": "Lina Criales",
+    "principal": "Lina María Criales",
     "cupos": 1,
     "tipo": "pasadia"
   },
@@ -139,7 +139,7 @@
   },
   {
     "id": "mj-024",
-    "principal": "Tía esperanza y Luis Migue",
+    "principal": "Tía Esperanza y Luis Miguel Rivera",
     "cupos": 2,
     "tipo": "pasadia"
   },
@@ -164,18 +164,18 @@
   {
     "id": "mj-028",
     "principal": "Diana Marcela Llanos",
-    "cupos": 1,
-    "tipo": "pasadia"
-  },
-  {
-    "id": "mj-029",
-    "principal": "Marin Garcia Orozco",
     "cupos": 2,
     "tipo": "pasadia"
   },
   {
+    "id": "mj-029",
+    "principal": "Martin Garcia Orozco",
+    "cupos": 4,
+    "tipo": "pasadia"
+  },
+  {
     "id": "mj-030",
-    "principal": "Clarivel, isabella, y Luis fer",
+    "principal": "Clarivel, Isabella, y Luisfer",
     "cupos": 4,
     "tipo": "pasadia"
   },
@@ -187,19 +187,19 @@
   },
   {
     "id": "mj-032",
-    "principal": "Leandro, Diana y Nico",
+    "principal": "Leandro y Diana",
     "cupos": 2,
     "tipo": "alojamiento"
   },
   {
     "id": "mj-033",
-    "principal": "Julián Rivera",
+    "principal": "Julián David Rivera",
     "cupos": 1,
     "tipo": "pasadia"
   },
   {
     "id": "mj-034",
-    "principal": "Katherin, Mariana Y Antonella",
+    "principal": "Katherine, Mariana Y Antonella",
     "cupos": 3,
     "tipo": "pasadia"
   }
